@@ -15,11 +15,15 @@ Do a live install and reboot.
 
 ## i3
 
-I usually use just three workspaces:
+I usually use just three workspaces in the following order:
 
-- chrome: managed by tab groups
-- xfce4-terminal: managed by tmux
-- emacs: managed by multiple buffers
+- chrome running [tab groups](https://blog.google/products/chrome/manage-tabs-with-google-chrome)
+- xfce4-terminal running [tmux](tmux.md)
+- emacs running [multiple buffers](https://www.gnu.org/software/emacs/manual/html_node/emacs/Buffers.html)
+
+My muscle memory just goes to one of the above with mod-{1,2,3}.
+Then inside any of them I use an additonal abstraction (tab
+groups, tmux or buffers) to manage multiple instances.
 
 My [~/.config/i3/config](config/i3/config)
 is based on the default with the following additions:
@@ -113,6 +117,10 @@ The `i3-sensible-terminal` in the i3 spin is xfce4-terminal.
     - Preset "green on black"
   - Advanced
     - Uncheck "Enable menu access keys (such as Alt+F to open the File menu)".
+
+## tmux
+
+See [tmux.md](tmux.md).
 
 ## Emacs
 
