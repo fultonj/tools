@@ -1,0 +1,55 @@
+#!/bin/bash
+
+if [[ "$1" == '-l' ]]; then
+    echo "locking and unmounting iron key"
+    if [[ $(mount | grep /mnt/iron | wc -l) -gt 0 ]]; then
+        sudo umount /mnt/iron
+    fi
+    if [[ -e /mnt/iron-iso/linux/ironkey ]]; then
+        /mnt/iron-iso/linux/ironkey -l
+        if [[ ! $? -eq 0 ]]; then
+            echo "Warning: there was a problem locking the iron key"
+        fi
+    fi
+    if [[ $(mount | grep /mnt/iron-iso | wc -l) -gt 0 ]]; then
+        sudo umount /mnt/iron-iso
+    fi
+else
+    #DEV=/dev/sdc1
+    DEV=/dev/disk/by-uuid/B0DB-149B
+    echo "unlocking and mounting iron key"
+    if [[ -e $DEV ]]; then
+        # do to a race condition we might miss sdb1
+        # this idempotent change is to support re-runs
+        sudo mount $DEV /mnt/iron
+        echo "iron key should be mounted at /mnt/iron"
+        exit 0
+    fi
+    if [[ -e /dev/sr0 ]]; then
+        sudo mount -t iso9660 -o ro /dev/sr0 /mnt/iron-iso
+        if [[ -e /mnt/iron-iso/linux/ironkey ]]; then
+            /mnt/iron-iso/linux/ironkey
+            sleep 2
+            if [[ -e $DEV ]]; then
+                sudo mount -o uid=1000,gid=1000 $DEV /mnt/iron
+                if [[ $? -eq 0 ]]; then
+                    echo "iron key should be mounted at /mnt/iron"
+                else
+                    echo "Error: unable to mount $DEV"
+                    exit 1
+                fi
+
+            else
+                echo "Error: iron key does not seem to be unlocked"
+                exit 1
+            fi
+        else
+            echo "Error: iron ISO does not seem to be mounted"
+            exit 1
+        fi
+    else
+        echo "Error: /dev/sr0 does not exist"
+        echo "Is iron key plugged in?"
+        exit 1
+    fi
+fi

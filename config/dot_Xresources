@@ -1,0 +1,17 @@
+! --- Emacs Lucid colors ---
+Emacs*foreground:        green
+Emacs*background:        black
+Emacs*cursorColor:       lime
+Emacs*pointerColor:      red
+
+! --- Selection ---
+Emacs*selectionForeground: black
+Emacs*selectionBackground: yellow
+
+! --- Fonts ---
+Emacs*font: JetBrainsMono Nerd Font-14
+
+! --- Misc ---
+Emacs*scrollBar: off
+Emacs*toolBar:   off
+Emacs*menuBar:   off
