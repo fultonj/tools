@@ -19,26 +19,34 @@ default `Ctrl-b` prefix since I don't want to have to customize
 it on servers. I customize my local tmux however and bind the prefix
 to `Ctrl-j`.
 
-## catppuccin
+## Tmux Plugin Manager (TPM)
 
-I follow these steps directly from
-[catppuccin/tmux](https://github.com/catppuccin/tmux?tab=readme-ov-file#manual-recommended).
+I use [TPM](https://github.com/tmux-plugins/tpm) to mange tmux plugins.
+Follow the
+[TPM installation](https://github.com/tmux-plugins/tpm?tab=readme-ov-file#installation)
+steps.
 
-Download `catppuccin/tmux`
-```
-mkdir -p ~/.config/tmux/plugins/catppuccin
-git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
-```
+## catppuccin/tmux
+
+I use
+[catppuccin/tmux](https://github.com/catppuccin/tmux/blob/main/README.md)
+to make tmux look nice.
+
 Add the following to `~/.tmux.conf`
 ```
-run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
+set -g @plugin 'catppuccin/tmux'
 ```
-Reload tmux
+Source the tmux file
 ```
 tmux source ~/.tmux.conf
 ```
+Inside of tmux run the following to ensure the listed `@plugin` is installed.
+```
+prefix + I
+```
+My other catppuccin settings can be seen in my `~/.tmux.conf`.
 
-## config
+## ~/.tmux.conf
 
 - Here is my [~/.tmux.conf](config/dot_tmux.conf)
 - I borrowed from [omerxx/dotfiles](https://github.com/omerxx/dotfiles/blob/master/tmux/tmux.conf)
