@@ -1,22 +1,18 @@
 # How I use tmux
 
-I used to use [tmux](https://github.com/tmux/tmux/wiki) just to:
+I used to only use [tmux](https://github.com/tmux/tmux/wiki) to:
 
 - keep a long running shell on a server after I logged out
 - share a terminal on a server with collaborators
 
-I also used to use lots of instances of the terminal
-(e.g. `xfce4-terminal`) on my laptop.
+I would not run tmux directly on my laptop and I would use many terminal instances.
 
-I'm now using a local tmux on my laptop just in _one_
-`xfce4-terminal` with lots of different windows and panes.
+Now my approach to tmux is the following:
 
-tmux has become like a window manager for terminals.
-
-When I SSH into servers I nest tmux but I don't have a problem
-becuase I use a different prefix. I keep the default `Ctrl-b`
-prefix since I don't want to customize tmux on servers. I only
-customize my local tmux and bind the prefix to `Ctrl-j`.
+- Use tmux like a window manager for terminals
+- Run _one_ `xfce4-terminal` with many tmux windows and panes
+- Do not customize tmux on servers; keep using the `Ctrl-b` prefix
+- Customize tmux prefix on my laptop; use the `Ctrl-j` prefix so I can nest
 
 ## Tmux Plugin Manager (TPM)
 
@@ -44,7 +40,7 @@ Inside of tmux run the following to ensure the listed `@plugin` is installed.
 ```
 prefix + I
 ```
-My other catppuccin settings can be seen in my `~/.tmux.conf`.
+My catppuccin settings can be seen in my `~/.tmux.conf`.
 
 ## ~/.tmux.conf
 
