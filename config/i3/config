@@ -219,3 +219,7 @@ exec --no-startup-id autokey-gtk
 
 # dark grey background
 exec --no-startup-id xsetroot -solid '#1a1a1a'
+
+# Lock and power down display after 1 hour
+exec --no-startup-id xset s 3600 3600
+exec --no-startup-id xset dpms 3600 3600 3600

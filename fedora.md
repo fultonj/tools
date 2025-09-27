@@ -162,5 +162,5 @@ Imation Basic D250 Flash Drive (D2-D250-B08-3FIPS).
 
 Other packages
 ```
-sudo dnf install mupdf htop iftop rpm-build 
+sudo dnf install mupdf htop iftop rpm-build xset
 ```
