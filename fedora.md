@@ -1,6 +1,8 @@
 # Fedora
 
-I used v42 (Adams) with the i3 spin at the time I wrote this.
+I used v42 (Adams) of the
+[Fedora i3 spin](https://fedoraproject.org/spins/i3)
+at the time I wrote this.
 
 ## Hardware
 
