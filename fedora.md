@@ -13,7 +13,30 @@ at the time I wrote this.
 ## Install
 
 Boot from [Fedora i3 spin](https://fedoraproject.org/spins/i3).
-Do a live install and reboot.
+Do a live install with an encrypted root disk and reboot.
+
+## Enable Verbose Boot
+
+```
+sudo grubby --update-kernel=ALL --remove-args="rhgb quiet"
+```
+Confirm arguments were removed.
+```
+sudo grubby --info=ALL | sed -n 's/^args=//p'
+```
+
+## LightDM
+
+Update the [LightDM](https://en.wikipedia.org/wiki/LightDM) login
+screen configuration file `/etc/lightdm/lightdm-gtk-greeter.conf`
+to comment out the background image and set a background color
+in its place.
+
+```
+  50   │ [greeter]
+  51   │ # background=/usr/share/backgrounds/default.jxl
+  52   │ background=#585858
+```
 
 ## i3
 

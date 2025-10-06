@@ -218,7 +218,7 @@ exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id autokey-gtk
 
 # dark grey background
-exec --no-startup-id xsetroot -solid '#1a1a1a'
+exec --no-startup-id xsetroot -solid '#585858'
 
 # Lock and power down display after 1 hour
 exec --no-startup-id xset s 3600 3600
