@@ -189,3 +189,6 @@ Other packages
 ```
 sudo dnf install mupdf htop iftop rpm-build xset
 ```
+## OpenShift
+
+See [openshift.md](openshift.md)
