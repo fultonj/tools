@@ -30,8 +30,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-### WAYLAND UPDATE: Set terminal to gnome-terminal (since you are on standard Fedora)
-set $term gnome-terminal
+### WAYLAND UPDATE:
+set $term foot
 bindsym $mod+Return exec $term
 
 # kill focused window
