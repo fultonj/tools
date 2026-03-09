@@ -1,0 +1,24 @@
+keymap:
+  - name: GNU to CUA (Chrome Only)
+    application:
+      # This ensures the remap ONLY happens when Chrome is focused
+      only: Google-chrome
+    remap:
+      # Cursor Movement
+      C-a: home
+      C-e: end
+      M-f: C-right
+      M-b: C-left
+      C-p: up
+      C-n: down
+      
+      # Deletion and Manipulation
+      C-d: delete
+      C-y: C-v  # Paste
+      
+      # Complex Macros (xremap can map one shortcut to a sequence of keys)
+      # Select-all in front of cursor and cut (Shift+End, then Ctrl+X)
+      C-k: [Shift-end, C-x] 
+      
+      # Select-all and delete (Ctrl+A, then Delete)
+      C-u: [C-a, delete]
