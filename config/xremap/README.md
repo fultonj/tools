@@ -83,8 +83,11 @@ Description=xremap key remapper
 After=graphical-session.target
 
 [Service]
+SupplementaryGroups=input uinput
+Environment=WAYLAND_DISPLAY=wayland-1
 ExecStart=/usr/bin/xremap %h/.config/xremap/config.yml
 Restart=on-failure
+RestartSec=3
 
 [Install]
 WantedBy=graphical-session.target
