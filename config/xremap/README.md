@@ -75,23 +75,7 @@ application: google-chrome
 mkdir -p ~/.config/systemd/user
 ```
 
-Create `~/.config/systemd/user/xremap.service`:
-
-```ini
-[Unit]
-Description=xremap key remapper
-After=graphical-session.target
-
-[Service]
-SupplementaryGroups=input uinput
-Environment=WAYLAND_DISPLAY=wayland-1
-ExecStart=/usr/bin/xremap %h/.config/xremap/config.yml
-Restart=on-failure
-RestartSec=3
-
-[Install]
-WantedBy=graphical-session.target
-```
+Create `~/.config/systemd/user/xremap.service` based on [systemd/user/xremap.service](../systemd/user/xremap.service)
 
 Enable and start it:
 

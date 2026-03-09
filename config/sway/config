@@ -170,10 +170,10 @@ bar {
     swaybar_command waybar
 }
 
-### WAYLAND UPDATE: Native Wayland CapsLock remapping (replaces setxkbmap)
-input type:keyboard {
-    xkb_options ctrl:nocaps
-}
+### Use xremap instead of the following to remap capslock
+#input type:keyboard {
+#    xkb_options ctrl:nocaps
+#}
 
 ### WAYLAND UPDATE: Native Wayland background color setting (replaces xsetroot)
 output * bg #585858 solid_color
