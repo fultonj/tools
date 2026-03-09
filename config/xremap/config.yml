@@ -2,7 +2,7 @@ keymap:
   - name: GNU to CUA (Chrome Only)
     application:
       # This ensures the remap ONLY happens when Chrome is focused
-      only: Google-chrome
+      only: google-chrome
     remap:
       # Cursor Movement
       C-a: home
