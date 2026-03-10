@@ -177,7 +177,3 @@ bar {
 
 ### WAYLAND UPDATE: Native Wayland background color setting (replaces xsetroot)
 output * bg #585858 solid_color
-
-# start autokey (NOTE: Global hotkeys in AutoKey may have limited functionality 
-# under Wayland due to security protocols isolating app inputs).
-exec --no-startup-id autokey-gtk
