@@ -21,6 +21,13 @@ memory. The keybindings on the right are the GNU equivalent in CUA.
 The term CUA bindings comes from IBM's Common User Access standard,
 which was later adopted by Microsoft.
 
+I used to just start Chrome with something like this:
+```
+Exec=env GTK_KEY_THEME=Emacs google-chrome-stable %U
+```
+Unfortunately Chromium 116+ no longer respects gtk-key-theme-name
+setting: https://issues.chromium.org/issues/40279679 so I use xremap.
+
 xremap is a key remapper for Wayland that supports application-specific remapping.
 This guide sets it up to translate GNU Emacs-style keybindings to CUA equivalents in Chrome.
 
