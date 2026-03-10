@@ -30,6 +30,48 @@ groups, tmux or buffers) to manage multiple instances.
 My [~/.config/sway/config](config/sway/config)
 was converted from my i3 config.
 
+## Waybar
+
+I prefer my [Waybar](https://github.com/Alexays/Waybar)
+at the bottom. It only required one modification to the
+default config so I'll share the steps, not the full
+config.
+
+```
+mkdir -p ~/.config/waybar
+cp /etc/xdg/waybar/config ~/.config/waybar/config 2>/dev/null || cp /etc/xdg/waybar/config.jsonc ~/.config/waybar/config
+```
+Uncomment the following line in `~/.config/waybar/config`/
+
+```
+"position": "bottom", // Waybar position (top|bottom|left|right)
+```
+I like to comment out the following modules:
+```
+    "modules-right": [
+        // "idle_inhibitor",
+        // "pulseaudio",
+        // "network",
+        "power-profiles-daemon",
+        "cpu",
+        "memory",
+        // "temperature",
+        // "backlight",
+        // "sway/language",
+        "battery",
+        "clock",
+        "tray"
+    ],
+```
+I also set the center modules to the following:
+```
+    "modules-center": [],
+```
+restart the waybar after changing this file.
+```
+killall waybar && waybar &
+```
+
 ## xremap on sway
 
 I use [xremap](https://github.com/xremap/xremap)
