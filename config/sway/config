@@ -177,3 +177,6 @@ bar {
 
 ### WAYLAND UPDATE: Native Wayland background color setting (replaces xsetroot)
 output * bg #585858 solid_color
+
+
+exec systemctl --user import-environment WAYLAND_DISPLAY && systemctl --user restart xremap

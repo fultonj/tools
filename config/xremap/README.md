@@ -91,3 +91,7 @@ systemctl --user daemon-reload
 systemctl --user enable --now xremap
 systemctl --user status xremap
 ```
+Add the following to the sway config since `WAYLAND_DISPLAY` won't be set until login
+```
+exec systemctl --user import-environment WAYLAND_DISPLAY && systemctl --user restart xremap
+```
