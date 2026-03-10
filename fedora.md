@@ -5,8 +5,8 @@ I used v42 (Adams) of the
 when I initially wrote this. That version of this repo is tagged
 [fedora42](https://github.com/fultonj/tools/blob/fedora42/fedora.md).
 
-I have since upgraded to Fedora 43 and did the switched
-to [Sway](https://swaywm.org) with [Wayland](https://wayland.freedesktop.org/).
+I have since upgraded to Fedora 43 and switched to [Sway](https://swaywm.org).
+There is a [Fedora Sway Spin](https://fedoraproject.org/spins/sway/).
 
 ## Hardware
 
