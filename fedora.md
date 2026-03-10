@@ -3,11 +3,11 @@
 I used v42 (Adams) of the
 [Fedora i3 spin](https://fedoraproject.org/spins/i3)
 when I initially wrote this. That version of this repo is tagged
-[fedora42](https://github.com/fultonj/tools/tree/fedora42).
+[fedora42](https://github.com/fultonj/tools/blob/fedora42/fedora.md).
 
 I have since upgraded to Fedora 43 and switched to
 [Sway](https://swaywm.org) with
-[Wayland](gitlab.freedesktop.org/wayland).
+[Wayland](http://gitlab.freedesktop.org/wayland).
 
 ## Hardware
 
