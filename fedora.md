@@ -67,7 +67,13 @@ I also set the center modules to the following:
 ```
     "modules-center": [],
 ```
-restart the waybar after changing this file.
+To change the colors copy them in and edit accordingly:
+```
+cp /etc/xdg/waybar/style.css ~/.config/waybar/style.css
+```
+Here's my [waybar_style_css.diff](waybar_style_css.diff).
+
+Restart the waybar after changing these files:
 ```
 killall waybar && waybar &
 ```

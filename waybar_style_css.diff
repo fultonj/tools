@@ -1,0 +1,47 @@
+--- /etc/xdg/waybar/style.css	2025-08-09 20:00:00.000000000 -0400
++++ /home/johfulto/.config/waybar/style.css	2026-03-09 23:22:19.707082679 -0400
+@@ -123,7 +123,7 @@
+ 
+ #battery.charging, #battery.plugged {
+     color: #ffffff;
+-    background-color: #26A65B;
++    background-color: #4B775E;
+ }
+ 
+ @keyframes blink {
+@@ -149,17 +149,17 @@
+ }
+ 
+ #power-profiles-daemon.performance {
+-    background-color: #f53c3c;
++    background-color: #A65B5B;
+     color: #ffffff;
+ }
+ 
+ #power-profiles-daemon.balanced {
+-    background-color: #2980b9;
++    background-color: #2d3436;
+     color: #ffffff;
+ }
+ 
+ #power-profiles-daemon.power-saver {
+-    background-color: #2ecc71;
++    background-color: #4B775E;
+     color: #000000;
+ }
+ 
+@@ -168,12 +168,12 @@
+ }
+ 
+ #cpu {
+-    background-color: #2ecc71;
++    background-color: #90b1b1;
+     color: #000000;
+ }
+ 
+ #memory {
+-    background-color: #9b59b6;
++    background-color: #2d3436;
+ }
+ 
+ #disk {
