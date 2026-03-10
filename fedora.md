@@ -26,18 +26,11 @@ My muscle memory just goes to one of the above with mod-{1,2,3}.
 Then inside any of them I use an additonal abstraction (tab
 groups, tmux or buffers) to manage multiple instances.
 
-My [~/.config/sway/config](config/sway/config)
-was converted from my i3 config.
+- [~/.config/sway/config](config/sway/config)
+- [waybar configuration](config/waybar).
+- My `.bashrc` has `alias xlock='swaylock -c 000000'`
 
-See my [waybar configuration](config/waybar).
-
-## swaylock
-In my .bashrc (old habits die hard)
-```
-alias xlock='swaylock -c 000000'
-```
-
-## xremap on sway
+## xremap
 
 I use [xremap](https://github.com/xremap/xremap)
 on Wayland to implement the following key bindings in Chrome.
