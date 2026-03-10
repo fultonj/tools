@@ -5,11 +5,9 @@ I used v42 (Adams) of the
 when I initially wrote this. That version of this repo is tagged
 [fedora42](https://github.com/fultonj/tools/blob/fedora42/fedora.md).
 
-I have since upgraded to Fedora 43 and did the following to switch
+I have since upgraded to Fedora 43 and did the switched
 to [Sway](https://swaywm.org) with [Wayland](https://wayland.freedesktop.org/).
-```
-sudo dnf install sway waybar wofi
-```
+
 ## Hardware
 
 - Lenovo ThinkPad X1 Carbon Gen 12, model 21KDS27P00
@@ -30,6 +28,10 @@ groups, tmux or buffers) to manage multiple instances.
 
 My [~/.config/sway/config](config/sway/config)
 was converted from my i3 config.
+
+```
+sudo dnf install sway waybar wofi
+```
 
 ## Waybar
 
