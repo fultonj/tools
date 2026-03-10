@@ -81,6 +81,12 @@ Restart the waybar after changing these files:
 killall waybar && waybar &
 ```
 
+## swaylock
+In my .bashrc (old habits die hard)
+```
+alias xlock='swaylock -c 000000'
+```
+
 ## xremap on sway
 
 I use [xremap](https://github.com/xremap/xremap)
