@@ -7,7 +7,7 @@ when I initially wrote this. That version of this repo is tagged
 
 I have since upgraded to Fedora 43 and switched to
 [Sway](https://swaywm.org) with
-[Wayland](http://gitlab.freedesktop.org/wayland).
+[Wayland](https://wayland.freedesktop.org/).
 
 ## Hardware
 
