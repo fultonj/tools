@@ -95,3 +95,26 @@ Add the following to the sway config since `WAYLAND_DISPLAY` won't be set until 
 ```
 exec systemctl --user import-environment WAYLAND_DISPLAY && systemctl --user restart xremap
 ```
+
+## xremap resume
+
+When the system suspends and resumes the remapping stops working in my browser.
+I added the following to address that.
+
+```
+sudo tee /etc/systemd/system/xremap-resume.service << EOF
+[Unit]
+Description=Restart xremap after resume
+After=suspend.target
+
+[Service]
+Type=oneshot
+User=$USER
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$UID/bus
+ExecStart=/bin/systemctl --user import-environment WAYLAND_DISPLAY
+ExecStart=/bin/systemctl --user restart xremap
+
+[Install]
+WantedBy=suspend.target
+EOF
+```
