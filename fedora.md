@@ -5,10 +5,11 @@ I used v42 (Adams) of the
 when I initially wrote this. That version of this repo is tagged
 [fedora42](https://github.com/fultonj/tools/blob/fedora42/fedora.md).
 
-I have since upgraded to Fedora 43 and switched to
-[Sway](https://swaywm.org) with
-[Wayland](https://wayland.freedesktop.org/).
-
+I have since upgraded to Fedora 43 and did the following to switch
+to [Sway](https://swaywm.org) with [Wayland](https://wayland.freedesktop.org/).
+```
+sudo dnf install sway waybar wofi
+```
 ## Hardware
 
 - Lenovo ThinkPad X1 Carbon Gen 12, model 21KDS27P00
