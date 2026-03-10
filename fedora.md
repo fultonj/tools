@@ -2,7 +2,12 @@
 
 I used v42 (Adams) of the
 [Fedora i3 spin](https://fedoraproject.org/spins/i3)
-at the time I wrote this.
+when I initially wrote this. That version of this repo is tagged
+[fedora42](https://github.com/fultonj/tools/tree/fedora42).
+
+I have since upgraded to Fedora 43 and switched to
+[Sway](https://swaywm.org) with
+[Wayland](gitlab.freedesktop.org/wayland).
 
 ## Hardware
 
@@ -10,61 +15,25 @@ at the time I wrote this.
 - Intel(R) Core(TM) Ultra 7 165U (14 CPUs)
 - 32 GB RAM
 
-## Install
-
-Boot from [Fedora i3 spin](https://fedoraproject.org/spins/i3).
-Do a live install with an encrypted root disk and reboot.
-
-## Enable Verbose Boot
-
-```
-sudo grubby --update-kernel=ALL --remove-args="rhgb quiet"
-```
-Confirm arguments were removed.
-```
-sudo grubby --info=ALL | sed -n 's/^args=//p'
-```
-
-## LightDM
-
-Update the [LightDM](https://en.wikipedia.org/wiki/LightDM) login
-screen configuration file `/etc/lightdm/lightdm-gtk-greeter.conf`
-to comment out the background image and set a background color
-in its place.
-
-```
-  50   │ [greeter]
-  51   │ # background=/usr/share/backgrounds/default.jxl
-  52   │ background=#585858
-```
-
-## i3
+## Sway
 
 I usually use just three workspaces in the following order:
 
 - chrome running [tab groups](https://blog.google/products/chrome/manage-tabs-with-google-chrome)
-- xfce4-terminal running [tmux](tmux.md)
+- [foot terminal](https://codeberg.org/dnkl/foot#why-the-name-foot) running [tmux](tmux.md)
 - emacs running [multiple buffers](https://www.gnu.org/software/emacs/manual/html_node/emacs/Buffers.html)
 
 My muscle memory just goes to one of the above with mod-{1,2,3}.
 Then inside any of them I use an additonal abstraction (tab
 groups, tmux or buffers) to manage multiple instances.
 
-My [~/.config/i3/config](config/i3/config)
-is based on the default with the following additions:
+My [~/.config/sway/config](config/sway/config)
+was converted from my i3 config.
 
-- make capslock another control key
-- set the background to dark grey
-- start autokey
+## xremap on sway
 
-## autokey
-
-```
-sudo dnf install autokey-gtk
-```
-
-I use [autokey](https://github.com/autokey/autokey)
-to implement the following key bindings in Chrome.
+I use [xremap](https://github.com/xremap/xremap)
+on Wayland to implement the following key bindings in Chrome.
 ```
 GNU      CUA
 --------------------------------
@@ -79,29 +48,13 @@ ctrl+p   up
 ctrl+n   down
 ctrl+y   paste
 ```
-The key bindings on the left are from GNU and I have them in my muscle
-memory. The keybindings on the right are the GNU equivalent in CUA.
-The term CUA bindings comes from IBM's Common User Access standard,
-which was later adopted by Microsoft.
-
-AutoKey intercepts the key strokes at the input layer and can
-prevent Chrome from ever seeing them. It can also do this based
-on a window filter so I can have it translate a key combination
-to something else only for Chrome windows. 
-
-[~/.config/autokey](config/autokey)
-
-I used to just start Chrome with something like this:
-```
-Exec=env GTK_KEY_THEME=Emacs google-chrome-stable %U
-```
-Unfortunately Chromium 116+ no longer respects gtk-key-theme-name
-setting: https://issues.chromium.org/issues/40279679 so I use autokey.
+See [my xremap config](config/xremap/) for details.
 
 ## Brightness
 
-`brightnessctl` will be installed by default. Dim the screen 10% as
-many times as needed.
+I use `brightnessctl` to control the screen brightness.
+
+For example, dim the screen 10% as many times as needed.
 ```
 brightnessctl set 10%-
 ```
@@ -127,22 +80,6 @@ unzip -o JetBrainsMono.zip
 fc-cache -f
 ```
 
-## xfce4-terminal
-
-The `i3-sensible-terminal` in the i3 spin is xfce4-terminal.
-
-- Preferences
-  - General 
-    - Check Automatically copy selection to clipboard
-    - Uncheck show unsafe paste dialog
-  - Appearance
-    - Uncheck "Use System Font"
-    - Search for "JetBrainsMono" to sent a nerd font
-  - Colors
-    - Preset "green on black"
-  - Advanced
-    - Uncheck "Enable menu access keys (such as Alt+F to open the File menu)".
-
 ## tmux
 
 See [tmux.md](tmux.md).
@@ -150,21 +87,27 @@ See [tmux.md](tmux.md).
 ## Emacs
 
 ```
-sudo dnf install emacs-lucid
+sudo dnf install emacs
 ```
-My [~/.Xresources](config/dot_Xresources)
-is to configure only the look of emacs.
-i3 already sources `~/.Xresources` on startup.
-I only run `xrdb -merge ~/.Xresources` if I change it.
+
+I have the following in my `.emacs` to control the colors and font.
+```lisp
+;; Appearance — faces are the canonical place for colors and fonts
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-14" :foreground "#00FF00" :background "#000000")
+(set-face-attribute 'cursor  nil :background "lime")
+(set-face-attribute 'mouse   nil :foreground "red")
+(set-face-attribute 'region  nil :foreground "black" :background "yellow")
+```
 I am not including my `~/elisp/` and `.emacs` here for now.
 
 ## Monitors
 
 I used to use three external monitors. Now I just use one. I use
-`arandr` to make it easy to switch between my laptop screen and an
+[wlr-randr](https://gitlab.freedesktop.org/emersion/wlr-randr)
+to make it easy to switch between my laptop screen and an
 external monitor.
 ```
-sudo dnf install arandr
+sudo dnf install wlr-randr
 ```
 I confiure two scripts which I symlink from `~/bin`:
 
@@ -187,7 +130,7 @@ Imation Basic D250 Flash Drive (D2-D250-B08-3FIPS).
 
 Other packages
 ```
-sudo dnf install mupdf htop iftop rpm-build xset
+sudo dnf install mupdf htop iftop rpm-build
 ```
 ## OpenShift
 
