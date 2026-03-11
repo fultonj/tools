@@ -24,10 +24,12 @@ I like to comment out the following modules:
         // "backlight",
         // "sway/language",
         "battery",
-        "clock",
-        "tray"
+        "clock"
+        // "tray"
     ],
 ```
+Note that I comment out the `tray` and remove the `,` after `clock.
+
 I also set the center modules to the following:
 ```
     "modules-center": [],
