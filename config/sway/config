@@ -9,10 +9,9 @@ font pango:monospace 8
 ### WAYLAND UPDATE: Changed environment flag from i3 to sway
 exec --no-startup-id dex-autostart --autostart --environment sway
 
-### WAYLAND UPDATE: Replaced xss-lock and xset with swayidle. 
-### This handles your 1-hour screen blanking and suspend locking natively in Wayland.
 exec swayidle -w \
-    timeout 3600 'swaymsg "output * dpms off"' \
+    timeout 900 'swaylock -f -c 000000' \
+    timeout 915 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -c 000000'
 
