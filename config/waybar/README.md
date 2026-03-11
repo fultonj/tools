@@ -1,20 +1,22 @@
 # Waybar
 
-I prefer my [Waybar](https://github.com/Alexays/Waybar)
-at the bottom. It only required one modification to the
-default config so I'll share the steps, not the full
-config.
+Here is how I modify by [Waybar](https://github.com/Alexays/Waybar).
 
 ```
 mkdir -p ~/.config/waybar
 cp /etc/xdg/waybar/config ~/.config/waybar/config 2>/dev/null || cp /etc/xdg/waybar/config.jsonc ~/.config/waybar/config
 ```
-Uncomment the following line in `~/.config/waybar/config`/
+Modify the following in `~/.config/waybar/config`
 
+Uncomment the following:
 ```
-"position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "bottom", // Waybar position (top|bottom|left|right)
 ```
-I like to comment out the following modules:
+Comment out the following (so height changes with font size)
+```
+    // "height": 30, // Waybar height (to be removed for auto height)
+```
+Comment out the following modules:
 ```
     "modules-right": [
         // "idle_inhibitor",
@@ -35,7 +37,7 @@ I also set the center modules to the following:
 ```
     "modules-center": [],
 ```
-To change the colors copy them in and edit accordingly:
+To change the colors and font size, copy the style sheet and edit accordingly:
 ```
 cp /etc/xdg/waybar/style.css ~/.config/waybar/style.css
 ```
