@@ -26,7 +26,7 @@ My muscle memory just goes to one of the above with mod-{1,2,3}.
 Then inside any of them I use an additonal abstraction (tab
 groups, tmux or buffers) to manage multiple instances.
 
-- [~/.config/sway/config](config/sway/config)
+- [~/.config/sway/config](config/sway/config) use `swaymsg reload` after changing
 - [waybar configuration](config/waybar).
 - My `.bashrc` has `alias xlock='swaylock -c 000000'`
 
