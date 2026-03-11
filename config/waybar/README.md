@@ -1,6 +1,6 @@
 # Waybar
 
-Here is how I modify by [Waybar](https://github.com/Alexays/Waybar).
+Here is how I modify my [Waybar](https://github.com/Alexays/Waybar).
 
 ```
 mkdir -p ~/.config/waybar
