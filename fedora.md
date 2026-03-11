@@ -102,7 +102,7 @@ I have the following in my `.emacs` to control the colors and font.
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-14" :foreground "#00FF00" :background "#000000")
 (set-face-attribute 'cursor  nil :background "lime")
 (set-face-attribute 'mouse   nil :foreground "red")
-(set-face-attribute 'region  nil :foreground "black" :background "yellow")
+(set-face-attribute 'region  nil :foreground "black" :background "grey")
 ```
 I am not including my `~/elisp/` and `.emacs` here for now.
 
