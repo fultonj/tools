@@ -58,7 +58,7 @@ with this [foot.ini](config/foot/foot.ini).
 
 ## ssh-agent
 
-I start [ssh-agent.md](ssh-agent.md) with a systemd user service.
+I start [ssh-agent with a systemd user service](ssh-agent.md).
 
 ## Brightness
 
