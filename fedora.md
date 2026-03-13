@@ -50,11 +50,15 @@ ctrl+y   paste
 ```
 See [my xremap config](config/xremap/) for details.
 
-## Foot
+## Terminal
 
 I am now using
 [foot terminal](https://codeberg.org/dnkl/foot#why-the-name-foot)
 with this [foot.ini](config/foot/foot.ini).
+
+## ssh-agent
+
+I start [ssh-agent.md](ssh-agent.md) with a systemd user service.
 
 ## Brightness
 
