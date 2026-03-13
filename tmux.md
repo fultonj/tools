@@ -10,7 +10,7 @@ I would not run tmux directly on my laptop and I would use many terminal instanc
 Now my approach to tmux is the following:
 
 - Use tmux like a window manager for terminals
-- Run _one_ `xfce4-terminal` with many tmux windows and panes
+- Run _one_ foot terminal with many tmux windows and panes
 - Do not customize tmux on servers; keep using the `Ctrl-b` prefix
 - Customize tmux prefix on my laptop; use the `Ctrl-j` prefix so I can nest
 
