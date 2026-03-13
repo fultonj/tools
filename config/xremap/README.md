@@ -159,15 +159,17 @@ After=suspend.target
 [Service]
 Type=oneshot
 User=$USER
-Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$UID/bus
-ExecStart=/bin/systemctl --user import-environment WAYLAND_DISPLAY
-ExecStart=/bin/systemctl --user restart xremap
+ExecStart=/usr/bin/machinectl shell $USER@ /bin/bash -c 'systemctl --user import-environment WAYLAND_DISPLAY && systemctl --user restart xremap'
 
 [Install]
 WantedBy=suspend.target
 EOF
-
-sudo systemctl enable --now xremap-resume.service
+```
+Then verify:
+```
+sudo systemctl daemon-reload
+sudo systemctl restart xremap-resume.service
+systemctl status xremap-resume.service
 ```
 
 Note: this is a system-level service (in `/etc/systemd/system/`), separate from
