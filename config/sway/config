@@ -180,3 +180,7 @@ output * bg #585858 solid_color
 
 
 exec systemctl --user import-environment WAYLAND_DISPLAY && systemctl --user restart xremap
+
+# Screenshots
+bindsym Print exec grim ~/screenshot.png
+bindsym $mod+Print exec grim -g "$(slurp)" ~/screenshot.png

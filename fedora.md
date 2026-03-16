@@ -136,12 +136,30 @@ sudo mkdir /mnt/iron{,-iso}
 The above works with my
 Imation Basic D250 Flash Drive (D2-D250-B08-3FIPS).
 
+## OpenShift
+
+See [openshift.md](openshift.md)
+
+## Screenshots
+
+```
+sudo dnf install grim slurp feh
+```
+I have the following in my [~/.config/sway/config](config/sway/config)
+```
+bindsym Print exec grim ~/screenshot.png
+bindsym $mod+Print exec grim -g "$(slurp)" ~/screenshot.png
+```
+So I can then do this:
+
+- `PrtSc` catpure full screen
+- `mod+PrtSc` turn mouse into cross-hairs so I can highlight what I want to capture
+
+Rename `~/screenshot.png` and use `feh` to view the image.
+
 ## Packages
 
 Other packages
 ```
 sudo dnf install mupdf htop iftop rpm-build
 ```
-## OpenShift
-
-See [openshift.md](openshift.md)
