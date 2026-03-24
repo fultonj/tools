@@ -158,20 +158,16 @@ After=suspend.target
 
 [Service]
 Type=oneshot
-User=$USER
-ExecStart=/usr/bin/machinectl shell $USER@ /bin/bash -c 'systemctl --user import-environment WAYLAND_DISPLAY && systemctl --user restart xremap'
+User=root
+ExecStart=/usr/sbin/runuser -l $USER -c 'systemctl --user import-environment WAYLAND_DISPLAY && systemctl --user restart xremap'
 
 [Install]
 WantedBy=suspend.target
 EOF
-```
-Then verify:
-```
+
 sudo systemctl daemon-reload
-sudo systemctl restart xremap-resume.service
-systemctl status xremap-resume.service
 ```
 
 Note: this is a system-level service (in `/etc/systemd/system/`), separate from
-the user-level xremap service. The `$USER` and `$UID` variables expand from your
-shell when you run the heredoc — do not use single-quoted `'EOF'` or they won't expand.
+the user-level xremap service. The `$USER` variable expands from your shell when
+you run the heredoc — do not use single-quoted `'EOF'` or it won't expand.
